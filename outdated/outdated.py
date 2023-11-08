@@ -14,3 +14,5 @@ months = [
 ]
 #prompt user for date
 #must be month-day-year order
+#output date in year-month-day format
+#no need to validate days in month
