@@ -1,21 +1,22 @@
 import sys
-import pyfiglet as pyg
+from pyfiglet import Figlet
+figlet = Figlet()
+fonts = figlet.getFonts()
 
-if len(sys.argv) != 1 and len(sys.argv) != 2:
+if len(sys.argv) == 1 or len(sys.argv) == 3:
+    if len(sys.argv) == 1:
+        name = input("Input: ")
+        print(figlet.renderText(name))
+    if len(sys.argv) == 3:
+        if sys.argv[1] == "-f" or sys.argv[1] == "--font":
+            f = sys.argv[2]
+            if f in fonts:
+                name = input("Input: ")
+                figlet.setFont(font = f)
+                print(figlet.renderText(name))
+            else: 
+                sys.exit("Invalid usage")
+        else:
+            sys.exit("Invalid usage")
+else:
     sys.exit("Invalid usage")
-
-
-if len(sys.argv) == 1:
-    str = input("Input: ")
-    out = pyg.figlet_format(str)
-    print("Ouput: ")
-    print(out)
-elif len(sys.argv) == 2:
-    if sys.argv[1] != "-f" or sys.argv[1] != "--font":
-        sys.exit("Invalid usage")
-    else: 
-        str = input("Input: ")
-        
-        out = pyg.figlet_format(str, font = sys.argv[1])
-        print("Output: ")
-        print(out)
