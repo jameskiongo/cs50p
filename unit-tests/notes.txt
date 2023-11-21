@@ -1,0 +1,2 @@
+assert (keyword)
+AssertionError
