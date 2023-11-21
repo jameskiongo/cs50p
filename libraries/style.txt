@@ -1,0 +1,8 @@
+Readability counts
+style guide for python
+Use consistent indentation
+Tabs or spaces?
+Maximum line length
+Use blank lines between blocks of code
+imports
+#pip install black
