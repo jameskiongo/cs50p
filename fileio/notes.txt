@@ -1,0 +1,3 @@
+use open(name of function) to open a file
+use with() automatically open and close file
+if you're reading file u don't need "r"
