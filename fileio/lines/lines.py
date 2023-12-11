@@ -4,11 +4,19 @@ def main():
     check_argv()
     while True:
         try:
-            new = open(sys.argv[1])
-            new.readlines()
-            new.close()
+            with open(sys.argv[1]) as file:
+                count = 0
+                for line in file: 
+                    if line[0] == "#":
+                        None
+                    elif line[0] == " ":
+                        None
+                    else:
+                        count += 1
+                print(count)
+                break
         except FileNotFoundError:
-            sys.exit()
+            sys.exit("")
 
 def check_argv():
     if len(sys.argv) < 2:
