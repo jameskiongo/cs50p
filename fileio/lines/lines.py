@@ -2,28 +2,31 @@ import sys
 
 def main():
     check_argv()
-    while True:
-        try:
-            with open(sys.argv[1]) as file:
-                count = 0
-                for line in file: 
-                    if line[0] == "#":
-                        None
-                    elif line[0] == " ":
-                        None
-                    else:
-                        count += 1
-                print(count)
-                break
-        except FileNotFoundError:
-            sys.exit("")
+    try:
+        file = open(sys.argv[1], "r")
+        lines = file.readlines()
+    except FileNotFoundError:
+        sys.exit("File does not exist")
+    count_line = 0
+    for line in lines:
+        if check_line(line) == False:
+            count_line += 1
+    print(count_line)
 
 def check_argv():
     if len(sys.argv) < 2:
         sys.exit("Too few command-line arguments")
-    elif len(sys.argv) > 2:
+    if len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
-    
+    if ".py" not in sys.argv[1]:
+        sys.exit("Not a Python file")
+
+def check_line(line):
+    if line.isspace():
+        return True
+    if line.lstrip().startswith('#'):
+        return True
+    return False
 
 if __name__ == "__main__":
     main()
