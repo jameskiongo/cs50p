@@ -1,7 +1,8 @@
 import sys
 
 def main():
-    check_arg
+    check_arg()
+    
 def check_arg():
     if len(sys.argv) < 3:
         sys.exit("Too few command-line arguments")
