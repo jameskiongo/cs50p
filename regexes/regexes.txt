@@ -1,0 +1,11 @@
+patterns in re.search:
+. (any character except a newling)
+* (0 or more repetition)
++ (1 or more repetition)
+? (0 or 1 repetition)
+{m} m (repetition)
+{m, n} (repetition)
+^ (matches the start of the string)
+$ (match end of the string)
+[] (set of characters)
+[^] (cannot match any of the characters)
