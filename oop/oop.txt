@@ -1,0 +1,11 @@
+tuples are inmutable: cannot change values of tuples
+list are mutable
+Classes: allows programmer to invent their own data types
+name of class begins with capital
+Objects: create objects from Classes
+Methods : classes come with functions that a programmer can define.
+they help determine behavior in certain ways
+def __init__(self): initialize a method
+def __str__(): wants to see your object as a string
+properties: attribute with more functionality, has more control over
+keyword: @property
