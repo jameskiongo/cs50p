@@ -5,13 +5,13 @@ class Student:
         self.house = house
         
     def __str__(self):
-        return f"{self.name} from {self.house}
+        return f"{self.name} from {self.house}"
     
     #class
     @classmethod
     def get(cls):
         name = input("Name: ")
-        house = input("House")
+        house = input("House: ")
         return cls(name, house)
     
     #name getter
@@ -39,8 +39,7 @@ class Student:
     #     self._house = house
 
 def main():
-    student = get_student()
-    student._house = "Number Four, Privet Drive"
+    student = Student.get()
     print(student)
         
 
