@@ -5,41 +5,44 @@ class Student:
         self.house = house
         
     def __str__(self):
-        return f"{self.name} from {self.house}"
+        return f"{self.name} from {self.house}
+    
+    #class
+    @classmethod
+    def get(cls):
+        name = input("Name: ")
+        house = input("House")
+        return cls(name, house)
     
     #name getter
-    @property
-    def name(self):
-        return self._name
+    # @property
+    # def name(self):
+    #     return self._name
     
-    #name setter
-    @name.setter
-    def name(self, name):
-        if not name:
-            raise ValueError("Missing name")
-        self._name = name
+    # #name setter
+    # @name.setter
+    # def name(self, name):
+    #     if not name:
+    #         raise ValueError("Missing name")
+    #     self._name = name
     
-    #house getter
-    @property
-    def house(self):
-        return self._house
+    # #house getter
+    # @property
+    # def house(self):
+    #     return self._house
     
-    #house setter
-    @house.setter
-    def house(self, house):
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
-        self._house = house
+    # #house setter
+    # @house.setter
+    # def house(self, house):
+    #     if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+    #         raise ValueError("Invalid house")
+    #     self._house = house
 
 def main():
     student = get_student()
     student._house = "Number Four, Privet Drive"
     print(student)
         
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
 
 if __name__ == "__main__":
     main()
