@@ -8,7 +8,7 @@ p = inflect.engine()
 def main():
     try:
         year, month, day = input("Date: ").split("-")
-        # validate(year,month,day)
+        validate(year,month,day)
     except ValueError:
         sys.exit("Invalid Date")
     print(minutes(year,month,day))
@@ -25,13 +25,13 @@ def minutes(year,month,day):
     return msg.capitalize()
     
 
-# def validate(year, month, day):
-#     if not re.search(r"^\d{4}$", year):
-#         return "Invalid Date"
-#     if int(month) > 12 or int(month) < 1:
-#         return "Invalid Date"
-#     if int(day) > 31 or int(day) < 1:
-#         return "Invalid date"
+def validate(year, month, day):
+    if not re.search(r"^\d{4}$", year):
+        return "Invalid Date"
+    if int(month) > 12 or int(month) < 1:
+        return "Invalid Date"
+    if int(day) > 31 or int(day) < 1:
+        return "Invalid date"
 
     
 if __name__ == "__main__":

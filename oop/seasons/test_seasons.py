@@ -1,12 +1,11 @@
-from seasons import validate_date
+from seasons import minutes
 
 def main():
     test_validate_date()
     
 def test_validate_date():
-    assert validate_date('1988-07-03') == ('1988-07-03')
-    assert validate_date('1988-7-3') == None
-    assert validate_date('July 3, 1998') == None
+    assert minutes(2000,1,1) == ('Twelve million, six hundred five thousand, seven hundred sixty minutes')
+    assert minutes(2023,1,5) == ('Five hundred two thousand, five hundred sixty minutes')
 
 if __name__ == "__main__":
     main()

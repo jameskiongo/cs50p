@@ -7,10 +7,10 @@ p = inflect.engine()
 def main():
     date = validate_date(input("Date: "))
     year, month, day = date.split("-")
-    dob = (int(year), int(month), int(day))
-    today = (2000, 1, 1)
+    dob = date(int(year), int(month), int(day))
+    today = date.today()
     diff = today - dob
-    diff = round(diff.total_seconds() / 60)
+    diff = int(diff.total_seconds() / 60)
     output = p.number_to_words(diff, andword="")
     print(output.capitalize() + " minutes")
 
