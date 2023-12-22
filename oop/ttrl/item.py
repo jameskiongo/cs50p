@@ -1,20 +1,27 @@
-import csv
-
+import csv 
 
 class Item:
-    pay_rate = 0.8 #pay after 20% discount
     all = []
     def __init__(self, name: str, price: float, quantity=0):
         # validation
         assert price >= 0, f"Price {price} is less than 0!"
         assert quantity >= 0, f"Quantity {quantity} is less than 0!"
 
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
         
         #execute
         Item.all.append(self)
+
+    @property
+    def name(self):
+        return self.__name
+    
+    @name.setter
+    def name(self, value):
+        self.__name = value
+
     def calculate_price(self):
         return self.price * self.quantity
     
@@ -42,7 +49,6 @@ class Item:
         else:
             return False
     def __repr__(self):
-        return f"Item('{self.name}', '{self.price}', '{self.quantity}')"
+        return f"{self.__class__.__name__}('{self.name}', '{self.price}', '{self.quantity}')"
 
-
-print(Item.is_integer(7.0))
+    
