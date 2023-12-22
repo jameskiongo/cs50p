@@ -8,7 +8,7 @@ class Student:
         self.score = score
         if self.score >= 90:
             return "A"
-        elif self.score >= 80 or self.score <= 89:
+        elif self.scofre >= 80 or self.score <= 89:
             return "B"
         elif self.score >= 70 or self.score <= 79:
             return "C"
