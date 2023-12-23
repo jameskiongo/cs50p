@@ -18,7 +18,9 @@ class Student:
             return "F"
 
     def add_course(self, course_name, score):
-        pass
+        self.course_name = course_name
+        self.score = score
+        self.courses[self.course_name].append(Student.calculate_letter_grade(self.score))
 
     def get_courses(self):
         return self.__courses
